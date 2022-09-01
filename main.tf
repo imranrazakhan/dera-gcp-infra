@@ -16,6 +16,22 @@ provider "google" {
   region  = "${var.region}"
 }
 
+locals {
+  api = [
+    "cloudresourcemanager.googleapis.com",
+    "container.googleapis.com",
+  ]
+}
+
+resource "google_project_service" "apis" {
+  count = length(local.api)
+
+  service                    = local.api[count.index]
+  project                    = "your-project-id"
+  disable_dependent_services = true
+}
+
+
 module "vpc" {
   source = "./backend/vpc"
 }
