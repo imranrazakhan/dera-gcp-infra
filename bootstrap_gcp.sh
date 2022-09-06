@@ -22,6 +22,14 @@ authorise_gcp() {
   gcloud projects add-iam-policy-binding <project_name> --member serviceAccount:<service_account_name>@<project_name>.iam.gserviceaccount.com --role roles/resourcemanager.projectIamAdmin
   gcloud projects add-iam-policy-binding <project_name> --member serviceAccount:<service_account_name>@<project_name>.iam.gserviceaccount.com --role roles/container.admin
   gcloud projects add-iam-policy-binding <project_name> --member serviceAccount:<service_account_name>@<project_name>.iam.gserviceaccount.com --role roles/compute.admin
+  
+  
+  gcloud projects add-iam-policy-binding <project-name> --member serviceAccount:<service account name>@<project-name>.iam.gserviceaccount.com --role roles/container.clusterAdmin
+  gcloud projects add-iam-policy-binding <project-name> --member serviceAccount:<service account name>@<project-name>.iam.gserviceaccount.com --role roles/compute.viewer
+  gcloud projects add-iam-policy-binding <project-name> --member serviceAccount:<service account name>@<project-name>.iam.gserviceaccount.com --role roles/compute.securityAdmin
+  gcloud projects add-iam-policy-binding <project-name> --member serviceAccount:<service account name>@<project-name>.iam.gserviceaccount.com --role roles/container.developer
+  gcloud projects add-iam-policy-binding <project-name> --member serviceAccount:<service account name>@<project-name>.iam.gserviceaccount.com --role roles/iam.serviceAccountAdmin
+  
 
   # Creat and downloaded a .json key for the service account with the command below. This key will be used for authentication for terraform and the CICD platform
   gcloud iam service-accounts keys create <service-key.json> --iam-account=<service_account_name>@<project_name>.iam.gserviceaccount.com
