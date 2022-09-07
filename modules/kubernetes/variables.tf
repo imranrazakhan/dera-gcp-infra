@@ -18,6 +18,10 @@ variable "cluster_name" {
   description = "The name of the cluster."
 }
 
+variable "env_name" {
+  description = "The environment for the GKE cluster"
+}
+
 variable "machine_type" {
   type        = string
   description = "Type of the node compute engines."
@@ -48,19 +52,15 @@ variable "kubernetes_max_ver" {
 
 variable "network" {
   description = "The VPC network created to host the cluster in"
-  default     = "gke-network"
 }
 variable "subnetwork" {
   description = "The subnetwork created to host the cluster in"
-  default     = "gke-subnet"
 }
 variable "ip_range_pods_name" {
   description = "The secondary ip range to use for pods"
-  default     = "ip-range-pods"
 }
 variable "ip_range_services_name" {
   description = "The secondary ip range to use for services"
-  default     = "ip-range-services"
 }
 
 variable "iam_roles_list" {
@@ -82,6 +82,19 @@ variable "service_account" {
 variable "initial_node_count" {
   type        = number
   description = "The number of nodes to create in this cluster's default node pool."
+}
+
+variable "ssh_user" {
+  description = "The user that Ansible will use"
+  default     = "root"
+}
+
+variable "key_pairs" {
+  type = map
+  default = {
+    root_public_key  = "keys/root_id_ed25519.pub",
+    root_private_key = "keys/root_id_ed25519"
+  }
 }
 
 
