@@ -97,4 +97,9 @@ variable "key_pairs" {
   }
 }
 
+variable "bastion_members" {
+  type        = list(string)
+  description = "List of users, groups, SAs who need access to the bastion host"
+  default     = []
+}
 
