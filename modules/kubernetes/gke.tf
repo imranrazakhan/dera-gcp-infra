@@ -1,5 +1,7 @@
 module "gke" {
   source                     = "terraform-google-modules/kubernetes-engine/google"
+  
+  # required variables
   project_id                 = var.project_id
   name                       = var.cluster_name
   region                     = var.region
@@ -8,12 +10,18 @@ module "gke" {
   subnetwork                 = module.vpc.subnets_names[0]
   ip_range_pods              = var.ip_range_pods_name              # join("-",[var.subnetwork,"pods"])
   ip_range_services          = var.ip_range_services_name          # join("-",[var.subnetwork,"services"])
+    
+  # addons
   http_load_balancing        = false
   network_policy             = true
   horizontal_pod_autoscaling = true
   filestore_csi_driver       = false
+  
+  # optional variables
   remove_default_node_pool   = true
-  # kubernetes_version          = "latest"
+   # kubernetes_version          = "latest"
+   # regional                 = true
+   # create_service_account   = false
 
   node_pools = [
     {
