@@ -4,10 +4,10 @@ module "gke" {
   name                       = var.name
   region                     = var.region
   zones                      = var.zones
-  network                    = "default"
-  subnetwork                 = "default"
-  ip_range_pods              = ""
-  ip_range_services          = ""
+  network                    = module.gcp-network.network_name
+  subnetwork                 = module.gcp-network.subnets_names[0]
+  ip_range_pods              = var.ip_range_pods_name
+  ip_range_services          = var.ip_range_services_name
   http_load_balancing        = false
   network_policy             = true
   horizontal_pod_autoscaling = true
@@ -17,7 +17,7 @@ module "gke" {
     {
       name                      = "default-node-pool"
       machine_type              = var.machine_type
-      node_locations            = "us-central1-b,us-central1-c"
+      node_locations            = "europe-west1-b,europe-west1-c,europe-west1-d"
       min_count                 = var.min_count
       max_count                 = var.max_count
       local_ssd_count           = var.disk_size_gb
