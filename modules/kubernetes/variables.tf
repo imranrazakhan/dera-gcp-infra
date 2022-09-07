@@ -27,6 +27,11 @@ variable "machine_type" {
   description = "Type of the node compute engines."
 }
 
+#variable "cpus" {
+#  description = "Number of cpus"
+#  default     = "2"
+#}
+
 variable "min_count" {
   type        = number
   description = "Minimum number of nodes in the NodePool. Must be >=0 and <= max_node_count."
