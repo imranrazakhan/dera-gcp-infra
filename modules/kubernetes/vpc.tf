@@ -1,15 +1,21 @@
-module "gcp-network" {
+module "vpc" {
   source       = "terraform-google-modules/network/google"
   version      = "~> 2.5"
+  
   project_id   = var.project_id
   network_name = "${var.network}-${var.env_name}"
+  
   subnets = [
     {
-      subnet_name   = "${var.subnetwork}-${var.env_name}"
-      subnet_ip     = "10.10.0.0/16"
-      subnet_region = var.region
+      subnet_name              = "${var.subnetwork}-${var.env_name}"
+      subnet_ip                = "10.10.0.0/16"
+      subnet_region            = var.region
+      subnet_private_access    = "true"
+      subnet_flow_logs         = "true"
+      description              = var.subnet_description
     },
   ]
+  
   secondary_ranges = {
     "${var.subnetwork}-${var.env_name}" = [
       {
