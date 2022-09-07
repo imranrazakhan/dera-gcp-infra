@@ -13,6 +13,7 @@ module "gke" {
   horizontal_pod_autoscaling = true
   filestore_csi_driver       = false
   remove_default_node_pool   = "true"
+  # kubernetes_version          = "latest"
 
   node_pools = [
     {
@@ -54,3 +55,22 @@ module "gke" {
     all = []
   }
 }
+    
+#resource "google_compute_firewall" "ssh-rule" {
+#  depends_on   = [module.gke]
+#  name = "ssh"
+#  network  = "${var.network}-${var.env_name}"
+#  project  = "${var.project_id}"
+#  allow {
+#    protocol = "tcp"
+#    ports = ["22"]
+#  }
+#  source_ranges = ["0.0.0.0/0"]
+#}
+    
+#resource "google_compute_project_metadata" "ansible_ssh_key" {
+#  project = var.project_id
+#  metadata = {
+#    ssh-keys = "${var.ssh_user}:${file(var.key_pairs["root_public_key"])}"
+#  }
+#}
