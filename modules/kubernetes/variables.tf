@@ -56,12 +56,6 @@ variable "network" {
 variable "subnetwork" {
   description = "The subnetwork created to host the cluster in"
 }
-variable "ip_range_pods_name" {
-  description = "The secondary ip range to use for pods"
-}
-variable "ip_range_services_name" {
-  description = "The secondary ip range to use for services"
-}
 
 variable "subnetwork_ipv4_cidr_range" {
   description = "The subnetwork ip cidr block range."
@@ -70,7 +64,6 @@ variable "subnetwork_ipv4_cidr_range" {
 
 variable "ip_range_pods_name" {
   description = "The secondary ip range to use for pods"
-  default     = "ip-range-pods"
 }
 
 variable "pod_ipv4_cidr_range" {
@@ -78,10 +71,11 @@ variable "pod_ipv4_cidr_range" {
   default     = "10.24.0.0/14"
 }
 
+
 variable "ip_range_services_name" {
-  description = "The secondary ip range name to use for services"
-  default     = "ip-range-services"
+  description = "The secondary ip range to use for services"
 }
+
 variable "services_ipv4_cidr_range" {
   description = "The cidr ip range to use for services"
   default     = "10.28.0.0/20"
