@@ -59,7 +59,6 @@ variable "subnetwork" {
 
 variable "subnetwork_ipv4_cidr_range" {
   description = "The subnetwork ip cidr block range."
-  default     = "10.20.0.0/14"
 }
 
 variable "ip_range_pods_name" {
@@ -68,7 +67,6 @@ variable "ip_range_pods_name" {
 
 variable "pod_ipv4_cidr_range" {
   description = "The cidr ip range to use for pods"
-  default     = "10.24.0.0/14"
 }
 
 
@@ -78,7 +76,6 @@ variable "ip_range_services_name" {
 
 variable "services_ipv4_cidr_range" {
   description = "The cidr ip range to use for services"
-  default     = "10.28.0.0/20"
 }
 
 variable "iam_roles_list" {
