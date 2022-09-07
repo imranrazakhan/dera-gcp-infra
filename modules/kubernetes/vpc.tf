@@ -3,12 +3,12 @@ module "vpc" {
   version      = "~> 2.5"
   
   project_id   = var.project_id
-  network_name = "${var.network}-${var.env_name}"
+  network_name = "${var.network}-${var.env_name}-vpc"
   
   subnets = [
     {
-      subnet_name              = "${var.subnetwork}-${var.env_name}"
-      subnet_ip                = "10.10.0.0/16"
+      subnet_name              = "${var.subnetwork}-${var.env_name}-subnet"
+      subnet_ip                = "${var.subnetwork_cidr}"
       subnet_region            = var.region
       subnet_private_access    = "true"
       subnet_flow_logs         = "true"
@@ -17,14 +17,14 @@ module "vpc" {
   ]
   
   secondary_ranges = {
-    "${var.subnetwork}-${var.env_name}" = [
+    "${var.subnetwork}-${var.env_name}-subnet" = [
       {
         range_name    = var.ip_range_pods_name
-        ip_cidr_range = "10.20.0.0/16"
+        ip_cidr_range = ${var.ip_range_pods_cidr}"
       },
       {
         range_name    = var.ip_range_services_name
-        ip_cidr_range = "10.30.0.0/16"
+        ip_cidr_range = "${var.ip_range_services_cidr}"
       },
     ]
   }
