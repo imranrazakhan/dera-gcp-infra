@@ -7,40 +7,48 @@ variable "project_id" {
 variable "region" {
   type        = string
   description = "The region to create the cluster."
+  default = "europe-west4"
 }
 
 variable "zones" {
   type        = list(string)
   description = "The zones to create the cluster."
+  default = "europe-west4-b"
 }
 
 variable "cluster_name" {
   type        = string
   description = "The name of the cluster."
+  default = "yq-dev"
 }
 
 variable "env_name" {
   description = "The environment for the GKE cluster"
+  default = "dev"
 }
 
 variable "machine_type" {
   type        = string
   description = "Type of the node compute engines."
+  default = "e2-medium"
 }
 
 variable "min_count" {
   type        = number
   description = "Minimum number of nodes in the NodePool. Must be >=0 and <= max_node_count."
+  default = 1
 }
 
 variable "max_count" {
   type        = number
   description = "Maximum number of nodes in the NodePool. Must be >= min_node_count."
+  default = 1
 }
 
 variable "disk_size_gb" {
   type        = number
   description = "Size of the node's disk."
+  default = 50
 }
 
 variable "kubernetes_min_ver" {
