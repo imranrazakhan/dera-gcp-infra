@@ -1,3 +1,3 @@
 module "dev" {
-  source = "environments/dev"
+  source = "./environments/dev"
 }
