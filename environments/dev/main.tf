@@ -1,5 +1,7 @@
 module "vpc" {
   source = "../../modules/kubernetes/vpc"
+  project_id                 = var.project_id
+  network_name  = var.network_name
 }
 
 module "gke" {
