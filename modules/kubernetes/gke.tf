@@ -31,7 +31,7 @@ module "gke" {
     {
       name                      = "${var.project_id}-gke-node-pool"
       machine_type              = var.machine_type
-      node_locations            = "europe-west1-b,europe-west1-c,europe-west1-d"
+      node_locations            = var.node_locations
       min_count                 = var.min_count
       max_count                 = var.max_count
       disk_size_gb              = var.disk_size_gb
