@@ -3,6 +3,7 @@ module "vpc" {
   project_id                 = var.project_id
   network_name = "${var.network}-${var.env_name}-vpc"
   env_name    = var.env_name
+  region = var.region
   
   subnetwork  = var.subnetwork
   subnetwork_ipv4_cidr_range = var.subnetwork_ipv4_cidr_range
