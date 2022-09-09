@@ -51,7 +51,7 @@ module "gke" {
 
   initial_node_count        = var.initial_node_count
     
-  service_account = var.service_account
+  #service_account = var.service_account
   
   subnetwork_ipv4_cidr_range = var.subnetwork_ipv4_cidr_range
   
