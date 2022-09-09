@@ -12,6 +12,8 @@ module "vpc" {
   ip_range_pods_name  = var.ip_range_pods_name
     
   services_ipv4_cidr_range  = var.services_ipv4_cidr_range
+  
+  subnetwork  = var.subnetwork
 }
   
 module "gke_auth" {
