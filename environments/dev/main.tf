@@ -18,7 +18,6 @@ resource "local_file" "kubeconfig" {
 }
 
 module "gke" {
-  depends_on = [module.vpc]
   source  = "../../modules/kubernetes"
   
   env_name = var.env_name
