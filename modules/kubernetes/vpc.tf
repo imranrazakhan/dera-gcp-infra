@@ -20,12 +20,12 @@ module "vpc" {
     "${var.subnetwork}-${var.env_name}-subnet" = [
       {
         range_name    = var.ip_range_pods_name
-        ip_cidr_range = "${var.ip_range_pods_cidr}"
+        ip_cidr_range = var.ip_range_pods_cidr
       },
       {
         range_name    = var.ip_range_services_name
-        ip_cidr_range = "${var.ip_range_services_cidr}"
-      },
+        ip_cidr_range = var.ip_range_services_cidr
+      }
     ]
   }
 }
