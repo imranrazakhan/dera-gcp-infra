@@ -1,111 +1,21 @@
-variable "project_id" {
-  type        = string
-  description = "The project ID to create the cluster."
-  default = "dera-gcp-infra-dev"
-}
+project_id = "dera-gcp-infra-dev"
 
-variable "region" {
-  type        = string
-  description = "The region to create the cluster."
-  default = "europe-west4"
-}
-
-variable "zones" {
-  type        = list(string)
-  description = "The zones to create the cluster."
-  default = ["europe-west4-a"]
-}
-
-variable "cluster_name" {
-  type        = string
-  description = "The name of the cluster."
-  default = "yq-dev"
-}
-
-variable "env_name" {
-  description = "The environment for the GKE cluster"
-  default = "dev"
-}
-
-variable "machine_type" {
-  type        = string
-  description = "Type of the node compute engines."
-  default = "e2-medium"
-  # default = "n1-standard-1"
-}
-
-variable "min_count" {
-  type        = number
-  description = "Minimum number of nodes in the NodePool. Must be >=0 and <= max_node_count."
-  default = 1
-}
-
-variable "max_count" {
-  type        = number
-  description = "Maximum number of nodes in the NodePool. Must be >= min_node_count."
-  default = 1
-}
-
+region = "europe-west4"
+zones  = ["europe-west4-a"]
+cluster_name  = "yq-dev"
+env_name = "dev"
+machine_type  = "e2-medium"
+# default = "n1-standard-1"
+min_count = 1
+max_count  = 1
 disk_size_gb = 50
 
-variable "kubernetes_min_ver" {
-  default = "latest"
-}
-
-variable "kubernetes_max_ver" {
-  default = "latest"
-}
-
-variable "network" {
-  description = "The VPC network created to host the cluster in"
-  default     = "dera-gke-network"
-}
-variable "subnetwork" {
-  description = "The subnetwork created to host the cluster in"
-  default     = "dera-gke-subnet"
-}
-
+network  = "dera-gke-network"
+subnetwork  = "dera-gke-subnet"
 subnetwork_ipv4_cidr_range = "10.20.0.0/14"
-
-
 ip_range_pods_name = "ip-range-pods"
-
-variable "pod_ipv4_cidr_range" {
-  description = "The cidr ip range to use for pods"
-  default     = "10.24.0.0/14"
-}
-
-
-variable "ip_range_services_name" {
-  description = "The secondary ip range to use for services"
-  default     = "ip-range-services"
-}
-
-variable "services_ipv4_cidr_range" {
-  description = "The cidr ip range to use for services"
-  default     = "10.28.0.0/20"
-}
-
-variable "iam_roles_list" {
-  description = "List of IAM roles to be assigned to GKE service account"
-  type        = list(string)
-  default = [
-    "roles/logging.logWriter",
-    "roles/monitoring.metricWriter",
-    "roles/monitoring.viewer",
-    "roles/stackdriver.resourceMetadata.writer",
-  ]
-}
-
-variable "service_account" {
-  type        = string
-  description = "The service account to run nodes as if not overridden in `node_pools`. The create_service_account variable default value (true) will cause a cluster-specific service account to be created."
-}
-
-variable "initial_node_count" {
-  type        = number
-  description = "The number of nodes to create in this cluster's default node pool."
-  default = 1
-}
-
-
+pod_ipv4_cidr_range  = "10.24.0.0/14"
+ip_range_services_name  = "ip-range-services"
+services_ipv4_cidr_range = "10.28.0.0/20"
+service_account = "dera-dev-sa"
+initial_node_count = 1
