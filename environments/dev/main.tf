@@ -20,7 +20,7 @@ module "gke_auth" {
   depends_on   = [module.gke]
   project_id   = var.project_id
   location     = module.gke.location
-  cluster_name = module.gke.name
+
 }
 
 resource "local_file" "kubeconfig" {
