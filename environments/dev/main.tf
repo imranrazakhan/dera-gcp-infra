@@ -2,6 +2,16 @@ module "vpc" {
   source = "../../modules/kubernetes/vpc"
   project_id                 = var.project_id
   network_name = "${var.network}-${var.env_name}-vpc"
+  env_name    = var.env_name
+  
+  pod_ipv4_cidr_range  = var.pod_ipv4_cidr_range
+      
+  ip_range_services_name = var.ip_range_services_name
+  subnetwork_ipv4_cidr_range  = var.subnetwork_ipv4_cidr_range
+    
+  ip_range_pods_name  = var.ip_range_pods_name
+    
+  services_ipv4_cidr_range  = var.services_ipv4_cidr_range
 }
   
 module "gke_auth" {
@@ -10,6 +20,7 @@ module "gke_auth" {
   project_id   = var.project_id
   location     = module.gke.location
   cluster_name = module.gke.name
+  subnetwork  = var.subnetwork
 }
 
 resource "local_file" "kubeconfig" {
