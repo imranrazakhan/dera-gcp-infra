@@ -1,5 +1,4 @@
 module "gke" {
-  depends_on = [module.vpc]
   source                     = "terraform-google-modules/kubernetes-engine/google"
   version = "~> 23.0.0"
   
