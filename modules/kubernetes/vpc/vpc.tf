@@ -3,7 +3,7 @@ module "vpc" {
   version      = "~> 5.2.0"
   
   project_id   = var.project_id
-  network_name = "${var.network}-${var.env_name}-vpc"
+  network_name = "${var.network_name}-${var.env_name}-vpc"
   
   subnets = [
     {
