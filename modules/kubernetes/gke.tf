@@ -9,8 +9,9 @@ module "gke" {
   zones                      = var.zones
   network                    = module.vpc.network_name
   subnetwork                 = module.vpc.subnet_name[0]
-  ip_range_pods              = var.ip_range_pods_name              # join("-",[var.subnetwork,"pods"])
-  ip_range_services          = var.ip_range_services_name          # join("-",[var.subnetwork,"services"])
+  ip_range_pods              = var.pods_ip_range_name             # join("-",[var.subnetwork,"pods"])
+  ip_range_services          = var.services_ip_range_name         # join("-",[var.subnetwork,"services"])
+    
     
   # addons
   http_load_balancing        = false
