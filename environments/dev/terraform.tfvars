@@ -10,6 +10,8 @@ min_count = 1
 max_count  = 1
 disk_size_gb = 50
 
+network_name = "dera-gke-network"
+
 network  = "dera-gke-network"
 subnetwork  = "dera-gke-subnet"
 subnetwork_ipv4_cidr_range = "10.20.0.0/14"
