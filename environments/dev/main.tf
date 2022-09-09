@@ -1,11 +1,11 @@
 module "vpc" {
   source = "../../modules/kubernetes/vpc"
   project_id    = var.project_id
-  network_name  = "${var.network}-${var.env_name}-vpc"
+  network_name  = "${var.network}-${var.env_name}"
   env_name      = var.env_name
   region        = var.region
   
-  subnetwork  = "${var.subnetwork}-${var.env_name}-subnet"
+  subnetwork  = "${var.subnetwork}-${var.env_name}"
   subnetwork_ipv4_cidr_range = var.subnetwork_ipv4_cidr_range
   
   pods_ip_range_name      = var.pods_ip_range_name
