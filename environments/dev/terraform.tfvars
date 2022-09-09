@@ -4,11 +4,11 @@ region = "europe-west4"
 zones  = ["europe-west4-a"]
 cluster_name  = "yq-dev"
 env_name = "dev"
-machine_type  = "n1-standard-1"
+machine_type  = "e2-medium"
 # default = "n1-standard-1"
 min_count = 1
 max_count  = 1
-disk_size_gb = 50
+disk_size_gb = 40
 
 network_name = "dera-gke-network"
 
