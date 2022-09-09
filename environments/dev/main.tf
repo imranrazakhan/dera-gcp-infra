@@ -9,7 +9,7 @@ module "gke" {
   
   # required variables
   project_id                 = var.project_id
-  name                       = var.cluster_name
+  cluster_name               = var.cluster_name
   region                     = var.region
   zones                      = var.zones
   network                    = module.vpc.network_name
