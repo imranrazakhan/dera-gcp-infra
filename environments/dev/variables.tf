@@ -27,6 +27,10 @@ variable "env_name" {
   default = "dev"
 }
 
+variable "network_name" {
+  description = "The name of the VPC network being created"
+}
+
 variable "machine_type" {
   type        = string
   description = "Type of the node compute engines."
