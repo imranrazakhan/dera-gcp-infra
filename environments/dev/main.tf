@@ -1,9 +1,9 @@
 module "vpc" {
   source = "../../modules/kubernetes/vpc"
-  project_id                 = var.project_id
-  network_name = "${var.network}-${var.env_name}-vpc"
-  env_name    = var.env_name
-  region = var.region
+  project_id    = var.project_id
+  network_name  = "${var.network}-${var.env_name}-vpc"
+  env_name      = var.env_name
+  region        = var.region
   
   subnetwork  = var.subnetwork
   subnetwork_ipv4_cidr_range = var.subnetwork_ipv4_cidr_range
@@ -19,7 +19,7 @@ module "gke_auth" {
   source = "terraform-google-modules/kubernetes-engine/google//modules/auth"
   depends_on   = [module.gke]
   project_id   = var.project_id
-  location     = module.gke.location
+  location     = "europe"
   cluster_name = var.cluster_name
 }
 
