@@ -5,6 +5,8 @@ module "vpc" {
   project_id   = var.project_id
   network_name = "${var.network_name}-${var.env_name}-vpc"
   
+  region            = var.region
+  
   subnets = [
     {
       subnet_name              = "${var.subnetwork}-${var.env_name}-subnet"
