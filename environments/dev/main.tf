@@ -39,10 +39,8 @@ module "gke" {
   region                     = var.region
   zones                      = var.zones
   
-  network                    = "${var.network_name}-${var.env_name}-vpc"
-  subnetwork                 = "${var.subnetwork}-${var.env_name}-subnet"
-  
-  network_name = "${var.network_name}-${var.env_name}-vpc"
+  network                    = "${var.network_name}-${var.env_name}"
+  subnetwork                 = "${var.subnetwork}-${var.env_name}"
     
   machine_type              = var.machine_type
   min_count                 = var.min_count
