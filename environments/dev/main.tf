@@ -4,16 +4,14 @@ module "vpc" {
   network_name = "${var.network}-${var.env_name}-vpc"
   env_name    = var.env_name
   
-  pod_ipv4_cidr_range  = var.pod_ipv4_cidr_range
-      
-  ip_range_services_name = var.ip_range_services_name
-    
-  ip_range_pods_name  = var.ip_range_pods_name
-    
-  services_ipv4_cidr_range  = var.services_ipv4_cidr_range
-  
   subnetwork  = var.subnetwork
   subnetwork_ipv4_cidr_range = var.subnetwork_ipv4_cidr_range
+  
+  pods_ip_range_name      = var.pods_ip_range_name
+  pods_ip_cidr_range      = var.pods_ip_cidr_range
+  services_ip_range_name  = var.services_ip_range_name
+  services_ip_cidr_range  = var.services_ip_cidr_range
+  
 }
   
 module "gke_auth" {
@@ -47,18 +45,9 @@ module "gke" {
   max_count                 = var.max_count
   disk_size_gb    =   var.disk_size_gb
 
-  pod_ipv4_cidr_range  = var.pod_ipv4_cidr_range
   initial_node_count        = var.initial_node_count
     
-  ip_range_services_name = var.ip_range_services_name
-  subnetwork_ipv4_cidr_range  = var.subnetwork_ipv4_cidr_range
-    
-  ip_range_pods_name  = var.ip_range_pods_name
-    
-  services_ipv4_cidr_range  = var.services_ipv4_cidr_range
-    
   service_account = var.service_account
-    
   
 }
 
