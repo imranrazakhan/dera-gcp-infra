@@ -13,10 +13,7 @@ output "zones" {
   description = "Node Zones"
 }
 
-output "cluster_name" {
-  description = "Cluster name"
-  value       = module.gke.name
-}
+
   
 output "kubernetes_endpoint" {
   sensitive = true
