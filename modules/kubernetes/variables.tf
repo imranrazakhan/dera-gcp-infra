@@ -66,22 +66,23 @@ variable "subnetwork_ipv4_cidr_range" {
   description = "The subnetwork ip cidr block range."
 }
 
-variable "ip_range_pods_name" {
+variable "pods_ip_range_name" {
   description = "The secondary ip range to use for pods"
 }
 
-variable "pod_ipv4_cidr_range" {
+variable "pods_ip_cidr_range" {
   description = "The cidr ip range to use for pods"
 }
 
 
-variable "ip_range_services_name" {
+variable "services_ip_range_name" {
   description = "The secondary ip range to use for services"
 }
 
-variable "services_ipv4_cidr_range" {
+variable "services_ip_cidr_range" {
   description = "The cidr ip range to use for services"
 }
+
 
 variable "iam_roles_list" {
   description = "List of IAM roles to be assigned to GKE service account"
