@@ -13,7 +13,7 @@ variable "region" {
 variable "zones" {
   type        = list(string)
   description = "The zones to create the cluster."
-  default = "europe-west4-a"
+  default = ["europe-west4-a"]
 }
 
 variable "cluster_name" {
