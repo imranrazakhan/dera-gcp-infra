@@ -7,7 +7,6 @@ module "vpc" {
   pod_ipv4_cidr_range  = var.pod_ipv4_cidr_range
       
   ip_range_services_name = var.ip_range_services_name
-  subnetwork_ipv4_cidr_range  = var.subnetwork_ipv4_cidr_range
     
   ip_range_pods_name  = var.ip_range_pods_name
     
