@@ -34,7 +34,7 @@ variable "network_name" {
 variable "machine_type" {
   type        = string
   description = "Type of the node compute engines."
-  default = "e2-medium"
+  default = "n1-standard-1"
   # default = "n1-standard-1"
 }
 
