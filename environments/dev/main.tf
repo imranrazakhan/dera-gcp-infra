@@ -41,6 +41,8 @@ module "gke" {
   
   network                    = "${var.network_name}-${var.env_name}"
   subnetwork                 = "${var.subnetwork}-${var.env_name}"
+  
+  network_name               = "${var.network_name}-${var.env_name}"
     
   machine_type              = var.machine_type
   min_count                 = var.min_count
