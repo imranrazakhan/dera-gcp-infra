@@ -13,6 +13,11 @@ variable "zones" {
   description = "The zones to create the cluster."
 }
 
+variable "node_locations" {
+  type        = list(string)
+  description = "The locaions to create the node pool."
+}
+
 variable "cluster_name" {
   type        = string
   description = "The name of the cluster."
