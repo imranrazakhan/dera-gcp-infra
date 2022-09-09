@@ -39,7 +39,7 @@ module "gke" {
       image_type                = "COS_CONTAINERD"
       auto_repair               = true
       auto_upgrade              = true
-      service_account           = var.service_account
+      # service_account           = var.service_account
       #   service_account           = "project-service-account@<PROJECT ID>.iam.gserviceaccount.com"
       preemptible               = false
       initial_node_count        = var.initial_node_count
