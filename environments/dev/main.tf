@@ -49,6 +49,12 @@ module "gke" {
     
   service_account = var.service_account
   
+  subnetwork_ipv4_cidr_range = var.subnetwork_ipv4_cidr_range
+  
+  pods_ip_range_name      = var.pods_ip_range_name
+  pods_ip_cidr_range      = var.pods_ip_cidr_range
+  services_ip_range_name  = var.services_ip_range_name
+  services_ip_cidr_range  = var.services_ip_cidr_range
 }
 
 
