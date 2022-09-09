@@ -12,7 +12,6 @@ module "vpc" {
       subnet_region            = var.region
       subnet_private_access    = "true"
       subnet_flow_logs         = "true"
-      description              = var.subnet_description
     },
   ]
   
