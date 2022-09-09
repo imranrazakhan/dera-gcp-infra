@@ -8,7 +8,7 @@ module "vpc" {
   subnets = [
     {
       subnet_name              = "${var.subnetwork}-${var.env_name}-subnet"
-      subnet_ip                = "${var.subnetwork_cidr}"
+      subnet_ip                = "${var.subnetwork_ipv4_cidr_range}"
       subnet_region            = var.region
       subnet_private_access    = "true"
       subnet_flow_logs         = "true"
