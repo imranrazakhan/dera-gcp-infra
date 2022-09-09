@@ -7,8 +7,10 @@ module "gke" {
   name                       = var.cluster_name
   region                     = var.region
   zones                      = var.zones
-  network                    = module.vpc.network_name
-  subnetwork                 = module.vpc.subnet_name[0]
+    
+  network                    = "${var.network_name}-${var.env_name}-vpc"
+  subnetwork                 = "${var.subnetwork}-${var.env_name}-subnet"
+    
   ip_range_pods              = var.pods_ip_range_name             # join("-",[var.subnetwork,"pods"])
   ip_range_services          = var.services_ip_range_name         # join("-",[var.subnetwork,"services"])
     
