@@ -13,6 +13,7 @@ module "vpc" {
   services_ipv4_cidr_range  = var.services_ipv4_cidr_range
   
   subnetwork  = var.subnetwork
+  subnetwork_ipv4_cidr_range = var.subnetwork_ipv4_cidr_range
 }
   
 module "gke_auth" {
