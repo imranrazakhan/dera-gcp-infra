@@ -25,7 +25,7 @@ module "gke" {
   remove_default_node_pool   = true
    # kubernetes_version          = "latest"
    # regional                 = true
-   # create_service_account   = false
+   create_service_account   = false
 
   node_pools = [
     {
