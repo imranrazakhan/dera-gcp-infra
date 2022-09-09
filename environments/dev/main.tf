@@ -3,6 +3,10 @@ module "vpc" {
   project_id                 = var.project_id
   network_name  = var.network_name
 }
+  
+module "gke_auth" {
+  source = "../../modules/kubernetes"
+}
 
 module "gke" {
   source  = "../../modules/kubernetes"
