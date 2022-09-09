@@ -16,6 +16,11 @@ variable "zones" {
   default = ["europe-west4-a"]
 }
 
+variable "node_locations" {
+  type        = list(string)
+  description = "The locaions to create the node pool."
+}
+
 variable "cluster_name" {
   type        = string
   description = "The name of the cluster."
