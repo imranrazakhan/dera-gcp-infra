@@ -14,7 +14,7 @@ variable "zones" {
 }
 
 variable "node_locations" {
-  type        = list(string)
+  type        = string
   description = "The locaions to create the node pool."
 }
 
