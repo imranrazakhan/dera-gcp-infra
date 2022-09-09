@@ -1,5 +1,5 @@
 module "vpc" {
-  source = "../../modules/kubernetes"
+  source = "../../modules/kubernetes/vpc"
 }
 
 module "gke" {
