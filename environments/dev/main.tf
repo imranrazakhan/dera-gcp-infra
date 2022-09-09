@@ -21,7 +21,6 @@ module "gke_auth" {
   project_id   = var.project_id
   location     = module.gke.location
   cluster_name = module.gke.name
-  subnetwork  = var.subnetwork
 }
 
 resource "local_file" "kubeconfig" {
