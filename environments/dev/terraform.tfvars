@@ -1,8 +1,8 @@
 project_id = "dera-gcp-infra-dev"
 
-region = "europe-west4"
-zones  = ["europe-west4-a"]
-node_locations = "europe-west4-a, europe-west4-b, europe-west4-c"
+region = "europe-west3"
+zones  = ["europe-west3-c"]
+node_locations = "europe-west3-c"
 cluster_name  = "yq-dev"
 env_name = "dev"
 machine_type  = "n1-standard-1"
