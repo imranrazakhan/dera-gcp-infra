@@ -5,13 +5,11 @@ module "vpc" {
   project_id   = var.project_id
   network_name = "${var.network_name}-${var.env_name}-vpc"
   
-  region            = var.region
-  
   subnets = [
     {
       subnet_name              = "${var.subnetwork}-${var.env_name}-subnet"
       subnet_ip                = "${var.subnetwork_ipv4_cidr_range}"
-      subnet_region            = var.region
+      subnet_region            = "${var.region}"
       subnet_private_access    = "true"
       subnet_flow_logs         = "true"
     },
