@@ -5,7 +5,7 @@ module "vpc" {
   env_name      = var.env_name
   region        = var.region
   
-  subnetwork  = var.subnetwork
+  subnetwork  = "${var.subnetwork}-${var.env_name}-subnet"
   subnetwork_ipv4_cidr_range = var.subnetwork_ipv4_cidr_range
   
   pods_ip_range_name      = var.pods_ip_range_name
