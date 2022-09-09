@@ -18,6 +18,10 @@ variable "cluster_name" {
   description = "The name of the cluster."
 }
 
+variable "network_name" {
+  description = "The name of the VPC network being created"
+}
+
 variable "env_name" {
   description = "The environment for the GKE cluster"
 }
