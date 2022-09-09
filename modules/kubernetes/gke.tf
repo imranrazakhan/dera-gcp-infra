@@ -34,7 +34,8 @@ module "gke" {
       node_locations            = "europe-west1-b,europe-west1-c,europe-west1-d"
       min_count                 = var.min_count
       max_count                 = var.max_count
-      local_ssd_count           = var.disk_size_gb
+      disk_size_gb              = var.disk_size_gb
+      local_ssd_count           = 0
       disk_type                 = "pd-standard"
       image_type                = "COS_CONTAINERD"
       auto_repair               = true
