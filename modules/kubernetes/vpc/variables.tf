@@ -14,6 +14,10 @@ variable "subnetwork" {
   description = "The subnetwork created to host the cluster in"
 }
 
+variable "subnetwork_cidr" {
+  description = "The subnetwork cidr "
+}
+
 variable "ip_range_pods_name" {
   description = "The secondary ip range to use for pods"
 }
