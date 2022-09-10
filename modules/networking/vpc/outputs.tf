@@ -1,4 +1,5 @@
 output "network_name" {
-  description = "network name"
+  value       = module.vpc.network_name
+  description = "The name of the VPC being created"
 }
 
