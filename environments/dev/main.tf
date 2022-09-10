@@ -1,11 +1,10 @@
 module "vpc" {
   source = "../../modules/networking/vpc"
   project_id    = var.project_id
-  network_name  = "${var.network}-${var.env_name}"
-  env_name      = var.env_name
+  network_name  = var.network
   region        = var.region
   
-  subnetwork  = "${var.subnetwork}-${var.env_name}"
+  subnetwork  = var.subnetwork
   subnetwork_ipv4_cidr_range = var.subnetwork_ipv4_cidr_range
   
   pods_ip_range_name      = var.pods_ip_range_name
@@ -39,10 +38,10 @@ module "gke" {
   region                     = var.region
   zones                      = var.zones
   
-  network                    = "${var.network_name}-${var.env_name}"
-  subnetwork                 = "${var.subnetwork}-${var.env_name}"
+  network                    = var.network_name
+  subnetwork                 = var.subnetwork
   
-  network_name               = "${var.network_name}-${var.env_name}"
+  network_name               = var.network_name
     
   machine_type              = var.machine_type
   min_count                 = var.min_count
