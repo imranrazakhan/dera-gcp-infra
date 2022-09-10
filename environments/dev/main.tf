@@ -1,5 +1,5 @@
 module "vpc" {
-  source = "../../modules/kubernetes"
+  source = "../../modules/networking/vpc"
   project_id    = var.project_id
   network_name  = "${var.network}-${var.env_name}"
   env_name      = var.env_name
