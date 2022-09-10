@@ -16,7 +16,7 @@ module "vpc" {
   ]
   
   secondary_ranges = {
-    var.subnetwork = [
+    ${var.subnetwork} = [
       {
         range_name    = var.pods_ip_range_name
         ip_cidr_range = var.pods_ip_cidr_range
