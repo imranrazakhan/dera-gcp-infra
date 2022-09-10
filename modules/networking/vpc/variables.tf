@@ -11,10 +11,6 @@ variable "network_name" {
   description = "The name of the VPC network being created"
 }
 
-variable "env_name" {
-  description = "The environment for the GKE cluster"
-}
-
 variable "subnetwork" {
   description = "The subnetwork created to host the cluster in"
 }
