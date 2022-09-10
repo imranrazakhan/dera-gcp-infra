@@ -11,10 +11,10 @@ min_count = 1
 max_count  = 1
 disk_size_gb = 40
 
-network_name = "dera-gke-network"
+network_name = "dera-gke-network-dev"
 
-network  = "dera-gke-network"
-subnetwork  = "dera-gke-subnet"
+network  = "dera-gke-network-dev"
+subnetwork  = "dera-gke-subnet-dev"
 subnetwork_ipv4_cidr_range = "10.10.0.0/16"
 pods_ip_range_name = "ip-range-pods"
 pods_ip_cidr_range  = "10.20.0.0/16"
