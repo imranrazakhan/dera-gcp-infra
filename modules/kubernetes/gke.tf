@@ -9,7 +9,7 @@ module "gke" {
   zones                      = var.zones
     
   network                    = var.network_name
-  subnetwork                 = var.subnets_names
+  subnetwork                 = var.subnetwork
     
   ip_range_pods              = var.pods_ip_range_name             # join("-",[var.subnetwork,"pods"])
   ip_range_services          = var.services_ip_range_name         # join("-",[var.subnetwork,"services"])
