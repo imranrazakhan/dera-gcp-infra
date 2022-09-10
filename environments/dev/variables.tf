@@ -7,13 +7,13 @@ variable "project_id" {
 variable "region" {
   type        = string
   description = "The region to create the cluster."
-  default = "europe-west4"
+  default = "europe-west3"
 }
 
 variable "zones" {
   type        = list(string)
   description = "The zones to create the cluster."
-  default = ["europe-west4-a"]
+  default = ["europe-west3-a"]
 }
 
 variable "node_locations" {
@@ -58,7 +58,7 @@ variable "max_count" {
 variable "disk_size_gb" {
   type        = number
   description = "Size of the node's disk."
-  default = 50
+  default = 30
 }
 
 variable "kubernetes_min_ver" {
