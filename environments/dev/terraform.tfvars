@@ -1,8 +1,6 @@
 project_id = "dera-gcp-infra-dev"
 
-region = "europe-west3"
-zones  = ["europe-west3-b","europe-west3-c"]
-node_locations = "europe-west3-b,europe-west3-c"
+# Create a regional cluster with a multi-zone node pool
 cluster_name  = "yq-dev"
 env_name = "dev"
 machine_type  = "n1-standard-1"
@@ -10,6 +8,11 @@ machine_type  = "n1-standard-1"
 min_count = 1
 max_count  = 1
 disk_size_gb = 40
+
+region = "europe-west3"
+zones  = ["europe-west3-b","europe-west3-c"]
+node_locations = "europe-west3-b,europe-west3-c"
+
 
 network_name = "dera-gke-network-dev"
 
