@@ -9,9 +9,9 @@ min_count = 1
 max_count  = 1
 disk_size_gb = 40
 
-region = "europe-west3"
-zones  = ["europe-west3-c"]
-node_locations = "europe-west3-c"
+region = "europe-west2"
+zones  = ["europe-west2-b"]
+node_locations = "europe-west2-b"
 
 
 network_name = "dera-gke-network-dev"
