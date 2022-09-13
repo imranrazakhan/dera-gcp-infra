@@ -18,10 +18,15 @@ network_name = "dera-gke-network-dev"
 
 network  = "dera-gke-network-dev"
 subnetwork  = "dera-gke-subnet-dev"
-subnetwork_ipv4_cidr_range = "10.10.0.0/16"
+# Maximum 12 nodes
+subnetwork_ipv4_cidr_range = "10.10.0.0/28"
 pods_ip_range_name = "ip-range-pods"
-pods_ip_cidr_range  = "10.20.0.0/16"
+
+# /21 Smallest possible Pod IP range when the secondary range assignment method is managed by GKE
+pods_ip_cidr_range  = "10.20.0.0/21"
+
 services_ip_range_name  = "ip-range-services"
-services_ip_cidr_range = "10.30.0.0/16"
+# Maximum 512 number of Services
+services_ip_cidr_range = "10.30.0.0/23"
 service_account = "dera-dev-sa"
 initial_node_count = 1
