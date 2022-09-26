@@ -29,6 +29,11 @@ resource "helm_release" "argocd" {
     value = "argocd-server"
   }
   
+  set {
+    name  = "server.extraArgs"
+    value = "{--request-timeout=\"5m\"}"}
+  }
+  
   
   depends_on = [
     time_sleep.wait_120_seconds, kubernetes_namespace.argocd
